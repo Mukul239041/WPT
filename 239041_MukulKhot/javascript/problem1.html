@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem1</title>
+    <script>
+        function findLargestNum() {
+            var num1 = document.getElementById("num1").value;
+            var num2 = document.getElementById("num2").value;
+            var num3 = document.getElementById("num3").value;
+            if (num1 > num2 && num1 > num3) {
+                document.write(num1+" is greater");
+            }
+            if (num2 > num1 && num2 > num3) {
+                document.write(num2+" is greater");
+            }
+            if (num3 > num1 && num3 > num2) {
+                document.write(num3+" is greater");
+            }
+            else {
+                document.write("All numbers are equal");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="num1">Enter First Number</label>
+                </td>
+                <td>
+                    <input type="number" name="num1" id="num1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="num2">Enter Second Number</label>
+                </td>
+                <td>
+                    <input type="number" name="num2" id="num2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="num3">Enter Third Number</label>
+                </td>
+                <td>
+                    <input type="number" name="num3" id="num3">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" name="btn" id="btn" value="find" onclick="findLargestNum">Largest number</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

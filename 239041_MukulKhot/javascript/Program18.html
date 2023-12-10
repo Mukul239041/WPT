@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>String Operations</title>
+</head>
+<body>
+
+  
+<table>
+  <form id="stringForm">
+    <tr>
+  <td> <label for="mainString">Enter string:</label></td>
+   <td> <input type="text" id="mainString" name="mainString" required> <td></td>
+    </tr>
+    <tr>
+   <td><label for="substring">Enter substring:</label></td>
+  <td>  <input type="text" id="substring" name="substring" required> </td>
+</tr>
+<tr>
+   <td> <label for="replacement">Replace with string: </label></td>
+   <td> <input type="text" id="replacement" name="replacement"> </td>
+   </tr> 
+</table>
+    <p>Choose an operation:</p>
+    <input type="radio" name="operation" value="search" checked> Search Substring
+    <input type="radio" name="operation" value="uppercase"> To Uppercase
+    <input type="radio" name="operation" value="lowercase"> To Lowercase
+    <input type="radio" name="operation" value="trim"> Trim spaces
+    <input type="radio" name="operation" value="concatenate"> Concatenate
+    <input type="radio" name="operation" value="replace"> Replace
+    
+    <button type="button" onclick="performOperation()">Submit Query</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    function performOperation() {
+      const mainString = document.getElementById('mainString').value;
+      const substring = document.getElementById('substring').value;
+      const replacement = document.getElementById('replacement').value;
+
+      const selectedOperation = document.querySelector('input[name="operation"]:checked').value;
+      let result;
+      switch (selectedOperation) {
+        case 'search':
+          result = mainString.indexOf(substring);
+          break;
+        case 'uppercase':
+          result = mainString.toUpperCase();
+          break;
+        case 'lowercase':
+          result = mainString.toLowerCase();
+          break;
+        case 'trim':
+          result = mainString.trim();
+          break;
+        case 'concatenate':
+          result = mainString.concat(' ', substring);
+          break;
+        case 'replace':
+          result = mainString.replace(substring, replacement);
+          break;
+        default:
+          result = 'Invalid operation';
+      }
+
+      // Display the result
+      document.getElementById('result').innerHTML = `
+        <p>Original String: ${mainString}</p>
+        <p>Result: ${result}</p>
+      `;
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program21</title>
+</head>
+<body>
+        <h3>Members of my Group are</h3>
+        <ol id="list"></ol>
+        <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var names = ["Mukul", "Abhijeet", "Saurabh", "Sunny", "Bhaskar"];
+            var list = document.getElementById("list");
+            names.forEach(function(name) {
+              var item = document.createElement("li");
+              item.textContent = name;
+              list.appendChild(item);
+            });
+          });
+        </script>
+           
+</body>
+</html>

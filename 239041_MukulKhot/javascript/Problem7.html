@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem7</title>
+</head>
+
+<body>
+    <script>
+        function minNumber(...args) {
+            var mini=parseInt(args[0]);
+            for (i = 0; i <= args.length; i++) {
+                if (args[i] < mini) {
+                    mini = args[i];
+                }
+            }
+            document.write("Minimum number is " + mini);
+        }
+        // prompt("Enter numbers");
+        minNumber(5,4,8,1,2,9);
+    </script>
+</body>
+
+</html>

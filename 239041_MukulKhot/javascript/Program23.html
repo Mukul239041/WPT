@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program23</title>
+<style>
+    table {
+        border: 3px solid black;
+    }
+</style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <h3>Enter loan Information:</h3>
+            </td>
+        </tr>
+        <form id="loanForm"></form>
+        <tr>
+            <td><label for="loanAmount">1)Amount of Loan (any currency):</label>
+            </td>
+            <td>
+                <input type="number" id="loanAmount" min="0" max="1500000" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="interestRate">2)Annual Percentage Rate of interest:</label>
+            </td>
+            <td>
+                <input type="number" id="interestRate" min="0" step="0.01" required><br><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="repaymentPeriod">3)Repayment Period in years:</label>
+            </td>
+            <td>
+                <input type="number" id="repaymentPeriod" min="7" max="15" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button type="button" onclick="computePayment()">Compute</button>
+            </td>
+            <td>
+                <h3>Payment Information:</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="monthlyPayment">4)Your Monthly Payment will be:</label>
+            </td>
+            <td>
+                <input type="text" id="monthlyPayment" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="totalPayment">5)Your Total Payment will be:</label>
+            </td>
+            <td>
+                <input type="text" id="totalPayment" readonly>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="totalInterest">6)Your Total Interest payments will be:</label>
+            </td>
+            <td>
+                <input type="text" id="totalInterest" readonly>
+            </td>
+        </tr>
+    </form>
+    </table>
+    <script>
+        function computePayment() {
+            const loanAmount = parseFloat(document.getElementById('loanAmount').value);
+            const interestRate = parseFloat(document.getElementById('interestRate').value);
+            const repaymentPeriod = parseInt(document.getElementById('repaymentPeriod').value);
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(repaymentPeriod) || loanAmount <= 0 || loanAmount > 1500000 || interestRate <= 0 || repaymentPeriod < 7 || repaymentPeriod > 15) {
+                alert('Please enter valid loan amount (up to 15 lakhs), percentage ROI, and repayment period (7 to 15 years).');
+                return;
+            }
+
+            const monthlyInterestRate = interestRate / 100 / 12;
+            const numberOfPayments = repaymentPeriod * 12;
+            const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+            const totalPayment = monthlyPayment * numberOfPayments;
+            const totalInterest = (totalPayment - loanAmount) / loanAmount * 100;
+
+            document.getElementById('monthlyPayment').value = monthlyPayment.toFixed(2);
+            document.getElementById('totalPayment').value = totalPayment.toFixed(2);
+            document.getElementById('totalInterest').value = totalInterest.toFixed(2) + '%';
+        }
+    </script>
+</body>
+
+</html>

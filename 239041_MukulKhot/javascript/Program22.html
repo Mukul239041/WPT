@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program22</title>
+</head>
+
+<body>
+    <h3>Divs that contain the string “training”
+    </h3>
+    <div id="train">
+        <div>This div contains training.</div>
+        <div>Education Department</div>
+        <div>Training is important.</div>
+        <div>Training is given to students</div>
+    </div>
+    <script>
+        const divs = document.querySelectorAll('#train div');
+        function search() {
+            const keyword = 'training';
+            divs.forEach(div => {
+                const textContent = div.textContent.toLowerCase();
+                if (textContent.includes(keyword)) {
+                    div.style.backgroundColor = 'red';
+                }
+            });
+        }
+        search();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Order Details</title>
+  <script>
+    function displayOrderDetails() {
+      var orderId = document.getElementById('orderId').value;
+      var custName = document.getElementById('custName').value;
+      var billingDate = new Date(document.getElementById('billingDate').value);
+      var shippingDate = new Date(document.getElementById('shippingDate').value);
+      var orderTotal = document.getElementById('orderTotal').value;
+
+      // Validation
+      if (
+        orderId === '' ||
+        custName === '' ||
+        billingDate === '' ||
+        shippingDate === '' ||
+        orderTotal === ''
+      ) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      if (custName.length <= 5) {
+        alert('Customer name must be greater than 5 characters.');
+        return;
+      }
+
+      if (billingDate >= shippingDate) {
+        alert('Billing date must be lesser than shipping date.');
+        return;
+      }
+
+      // Create Order object
+      var order = {
+        OrderId: orderId,
+        CustomerName: custName,
+        BillingDate: billingDate.toDateString(),
+        ShippingDate: shippingDate.toDateString(),
+        OrderTotal: orderTotal
+      };
+
+      // Display details in a new window
+      var detailsWindow = window.open('', '_blank');
+      detailsWindow.document.write('<h2>Order Details</h2>');
+      detailsWindow.document.write('<table border="1">');
+      detailsWindow.document.write('<tr><th>Field</th><th>Value</th></tr>');
+      for (var prop in order) {
+        detailsWindow.document.write('<tr><td>' + prop + '</td><td>' + order[prop] + '</td></tr>');
+      }
+      detailsWindow.document.write('</table>');
+
+      // Display details on the same page
+      document.write('<h2>Order Details</h2>');
+      document.write('<table border="1">');
+      document.write('<tr><th>Field</th><th>Value</th></tr>');
+      for (var prop in order) {
+        document.write('<tr><td>' + prop + '</td><td>' + order[prop] + '</td></tr>');
+      }
+      document.write('</table>');
+    }
+  </script>
+</head>
+<body>
+  <form>
+    <label for="orderId">Order ID:</label>
+    <input type="text" id="orderId" required><br><br>
+
+    <label for="custName">Customer Name:</label>
+    <input type="text" id="custName" required><br><br>
+
+    <label for="billingDate">Billing Date:</label>
+    <input type="date" id="billingDate" required><br><br>
+
+    <label for="shippingDate">Shipping Date:</label>
+    <input type="date" id="shippingDate" required><br><br>
+
+    <label for="orderTotal">Order Total:</label>
+    <input type="number" id="orderTotal" required><br><br>
+
+    <input type="button" value="Display" onclick="displayOrderDetails()">
+  </form>
+</body>
+</html>

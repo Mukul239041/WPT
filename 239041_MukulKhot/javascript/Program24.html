@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program24</title>
+    <style>
+        label {
+          display: block;
+          margin-bottom: 5px;
+        }
+      </style>
+</head>
+
+<body>
+    <h1>Login</h1>
+    <form id="loginForm" onsubmit="validateLogin(); return false;">
+        <label for="username">Username:</label>
+        <input type="text" id="username" minlength="6" maxlength="10" pattern="[A-Za-z]{6,10}" required><br><br>
+
+        <label for="pwd">Password:</label>
+        <input type="pwd" id="pwd" minlength="8" required><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('pwd').value;
+
+            const userpattern = /^[A-Za-z]{6,10}$/;
+            const pwdpattern = /^(?=.*\d)(?=.*[#])[A-Za-z\d#]{8,}$/;
+
+            if (!userpattern.test(username)) {
+                alert('Username must be between 6 to 10 characters and contain only alphabetic characters.');
+                return;
+            }
+
+            if (!pwdpattern.test(password)) {
+                alert('Password should be at least 8 characters long, contain a #, and have at least one digit.');
+                return;
+            }
+            alert('Login successful!');
+        }
+    </script>
+</body>
+
+</html>

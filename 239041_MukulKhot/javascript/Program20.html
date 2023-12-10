@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program20</title>
+</head>
+<body>
+    <h1>Member of my group are</h1>
+    <div id="names"></div>
+
+    <script>
+        // Array of member names
+        var members = ["Mukul", "Anil", "Shirish","Lokesh", "Umesh", "Kaustubh"];
+
+        // Convert member names to uppercase and join them with a comma
+        var newNames = members.map(function(member) {
+            return member.toUpperCase();
+        }).join(", ");
+
+        // Display the formatted names in the HTML document
+        var member = document.getElementById('names');
+        member.textContent = newNames;
+    </script>
+</body>
+</html>

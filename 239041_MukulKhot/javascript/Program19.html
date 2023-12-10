@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <p>Enter a positive number less than 1000:</p>
+    <input type="number" id="n">
+    <button onclick="calculateSum()">Calculate</button>
+    <p id="ans"></p>
+
+    <script>
+        function calculateSum() {
+            // Get the input value
+            var num = parseInt(document.getElementById('n').value);
+            var display = document.getElementById('ans');
+
+            // Check if the number is within the specified range
+            if (num > 0 && num < 1000) {
+                var sum = 0;
+                // Calculate the sum of digits
+                while (num > 0) {
+                    sum += num % 10;
+                    num = Math.floor(num / 10);
+                }
+                display.textContent = "The sum of digits is: " + sum;
+            } else {
+                display.textContent = "Enter a positive number less than 1000.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+</body>
+</html>

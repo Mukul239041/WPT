@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rectangle object
+function Rectangle(length, width) {
+  this.length = length;
+  this.width = width;
+}
+
+// Method to calculate and print area of the rectangle
+Rectangle.prototype.calculateArea = function() {
+  return this.length * this.width;
+};
+
+// Method to calculate and print perimeter of the rectangle
+Rectangle.prototype.calculatePerimeter = function() {
+  return 2 * (this.length + this.width);
+};
+
+// Circle object
+function Circle(radius) {
+  this.radius = radius;
+}
+//area of circle 
+Circle.prototype.calculateArea = function() {
+  return Math.PI * Math.pow(this.radius, 2);
+};
+//circum. of circle
+Circle.prototype.calculateCircumference = function() {
+  return 2 * Math.PI * this.radius;
+};
+
+const rectangleObject = new Rectangle(5, 8);
+const circleObject = new Circle(4);
+
+
+document.write("Rectangle : <br>");
+document.write(" Length = ", rectangleObject.length, "Width = ", rectangleObject.width);
+document.write(" Area: ", rectangleObject.calculateArea());
+document.write(" Perimeter: ", rectangleObject.calculatePerimeter()+"<br>");
+
+// Display details of the predefined Circle object
+document.write("\nCircle :<br>");
+document.write(" Radius: ",circleObject.radius)
+document.write(" Area: ", circleObject.calculateArea());
+document.write(" Circumference: ", circleObject.calculateCircumference());
+
+    </script>
+</body>
+</html>

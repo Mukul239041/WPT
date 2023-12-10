@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circle Calculator</title>
+</head>
+<body>
+
+  <form id="circleForm">
+    <label for="radius">Enter the radius:</label>
+    <input type="number" id="radius" name="radius" required><br>
+    <button type="button" onclick="calculateCircle()">Display</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    function calculateCircle(){
+        const radius = parseFloat(document.getElementById('radius').value);
+
+        const area = Math.PI * Math.pow(radius, 2);
+        const circumference = 2 * Math.PI * radius;
+
+        document.getElementById('result').innerHTML = `
+          <p>Area: ${area.toFixed(2)}</p>
+          <p>Circumference: ${circumference.toFixed(2)}</p>
+        `;
+      
+    }
+  </script>
+
+</body>
+</html>

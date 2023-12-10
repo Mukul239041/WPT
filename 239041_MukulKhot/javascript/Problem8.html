@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem</title>
+</head>
+
+<body>
+    <script>
+        function calculatePower() {
+            var numr=document.getElementById("num").value;
+            var poww=document.getElementById("pow").value;
+            ans=0;
+            for(i=1;i<=parseInt(poww);i++){
+                ans=ans*parseInt(numr);
+            }
+            document.write("Answer is "+ans);
+        }
+    </script>
+    <form action="" method="post">
+        <label for="num">Enter number</label>
+        <input type="number" name="num" id="num">
+        <br><br>
+        <label for="pow">Enter power</label>
+        <input type="number" name="pow" id="pow">
+        <br><br>
+        <button type="button" name="btn" id="btn" value="calculate" onclick="calculatePower()">Calculate</button>
+    </form>
+</body>
+
+</html>

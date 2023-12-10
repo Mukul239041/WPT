@@ -1,0 +1,27 @@
+body {
+    background-color: black;
+}
+
+fieldset {
+    padding: 10px;
+    margin: 10px;
+    width: 40%;
+    border-color: blue;
+    border-width: 3px;
+}
+
+legend {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+}
+
+table {
+    color: white;
+}
+button{
+    color: white;
+    background-color: blue;
+    padding: 7px;
+    align-self: center;
+}

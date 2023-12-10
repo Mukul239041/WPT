@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SumOfDigits</title>
+</head>
+<body>
+    <script>
+        var n=prompt("Enter 5 digit number:");
+        sum=0;
+        while(n>0){
+            n1=parseInt(n)%10;
+            sum=sum+n1;
+            n=parseInt(n)/10;
+        }
+        document.write("Sum of digits is "+sum);
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    const words = ["chair", "cushion", "planet", "space", "rocket"];
+
+const reverseWord = (array) => array.map(word => word.split('').reverse().join(''));
+
+
+const reversedAndSortedArray = reverseWord(words).sort();
+
+document.write("Original Array:   ", words+"<br>");
+document.write("Reversed and Sorted Array:  ", reversedAndSortedArray);
+
+   </script> 
+</body>
+</html>

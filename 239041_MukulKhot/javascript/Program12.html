@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function getEmployeeNames() {
+  const employeeNames = [];
+
+  for (let i = 1; i <= 6; i++) {
+    const name = prompt(`Enter name of employee ${i}:`);
+    employeeNames.push(name);
+  }
+
+  return employeeNames;
+}
+
+function displaySortedNames(names) {
+  const sortedNames = names.slice().sort();
+  document.write("Sorted Employee Names:   ");
+  for (const name of sortedNames) {
+    document.write(name+"\n");
+
+  }
+}
+const employeeNamesArray = getEmployeeNames();
+displaySortedNames(employeeNamesArray);
+
+   </script> 
+</body>
+</html>

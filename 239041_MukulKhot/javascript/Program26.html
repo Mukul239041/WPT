@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <style>
+    /* Basic styling for better visualization (can be customized) */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .output {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form</h1>
+  <form id="dataForm">
+    <label for="name">Name (only alphabets, length 10):</label>
+    <input type="text" id="name" name="name" pattern="[A-Za-z]{1,10}" required>
+     
+    <label for="birthDate">Birth Date:</label>
+    <input type="date" id="birthDate" name="birthDate" required>
+    
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="luckyNumber">Lucky Number (4 digits):</label>
+    <input type="number" id="luckyNumber" name="luckyNumber" pattern="\d{4}" required>
+   
+    <label for="gender">Gender:</label>
+    Male: <input type="radio" id="male" name="gender" value="male">
+    Female:   <input type="radio" id="female" name="gender" value="female">
+    
+    
+    <label for="favoriteFoods">Favorite Foods:</label>
+    Pizza:    <input type="checkbox" id="pizza" name="favoriteFoods" value="pizza">
+    Pasta: <input type="checkbox" id="pasta" name="favoriteFoods" value="pasta">
+    Chinese:    <input type="checkbox" id="chinese" name="favoriteFoods" value="chinese">
+    <br>
+    <button type="submit">Send Data</button>
+  </form>
+
+  <div class="output" id="outputData"></div>
+
+  <script>
+    document.getElementById('dataForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(this);
+      const displayData = document.getElementById('outputData');
+      displayData.innerHTML = '<h2>Submitted Data:</h2>';
+
+      for (let [key, value] of formData.entries()) {
+        displayData.innerHTML += `<p><strong>${key.charAt(0).toUpperCase() + key.slice(1)}:</strong> ${Array.isArray(value) ? value.join(', ') : value}</p>`;
+      }
+    });
+  </script>
+</body>
+</html>

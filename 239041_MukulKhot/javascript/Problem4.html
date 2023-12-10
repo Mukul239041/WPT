@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem</title>
+</head>
+
+<body>
+    <script>
+        function operationOnNum() {
+            var num1 = prompt("Enter first number");
+            var num2 = prompt("Enter second number");
+            var op = prompt("Enter any operator + - / *")
+            switch (op) {
+                case '+':
+                    num3 = parseInt(num1) + parseInt(num2);
+                    document.write("Addition is " + num3);
+                    break;
+                case '-':
+                    num3 = parseInt(num1) - parseInt(num2);
+                    document.write("Subtraction is " + num3);
+                    break;
+                case '*':
+                    num3 = parseInt(num1) * parseInt(num2);
+                    document.write("Multiplication is " + num3);
+                    break;
+                case '/':
+                    if (n2 !== 0) {
+                        num3 = parseInt(num1) / parseInt(num2);
+                    }
+                    document.write("Division is " + num3);
+                    break;
+            }
+        }
+        operationOnNum();
+    </script>
+</body>
+
+</html>

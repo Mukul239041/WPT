@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        fieldset {
+            width: 700px;
+            padding: 10px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body bgcolor="SteelBlue" text="white">
+
+    <fieldset>
+        <legend>Registration Details</legend>
+        <table align="center">
+            <form action="" method="post">
+                <tr>
+                    <td>
+                        <label for="university">University:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="university" id="university">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="Institute">Institute:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="Institute" id="Institute">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="branch">Branch:</label>
+                    </td>
+                    <td>
+                        <select name="branch" id="branch">
+                            <option value="select">--select--</option>
+                            <option value="CS">CS</option>
+                            <option value="IT">IT</option>
+                            <option value="E&TC">E&TC</option>
+                            <option value="MECHANICAL">MECHANICAL</option>
+                            <option value="CIVIL">CIVIL</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="degree">Degree:</label>
+                    </td>
+                    <td>
+                        <select name="degree" id="degree">
+                            <option value="select">--select--</option>
+                            <option value="BE">BE</option>
+                            <option value="B-TECH">B-TECH</option>
+                            <option value="M-TECH">M-TECH</option>
+                            <option value="DIPLOMA">DIPLOMA</option>
+                        </select>
+                        <input type="radio" name="pursuing" id="pursuing">
+                        <label for="pursuing">pursuing</label>
+                        <input type="radio" name="pursuing" id="Completed">
+                        <label for="pursuing">Completed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Average CPI:</td>
+                    <td>
+                        <input type="number" name="avg" id="avg">
+                        <label for="upto">Upto</label>
+                        <input type="number" name="avg" id="avg">
+                        <label for="sem">Th Semester</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Experience</td>
+                    <td>
+                        <input type="number" name="exp" id="exp">
+                        <label for="years">Years</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Your Website Or Blog</td>
+                    <td>
+                        <input type="link" name="link" id="link" value="http://">
+                    </td>
+                </tr>
+            </form>
+        </table>
+    </fieldset>
+
+</body>
+
+</html>
